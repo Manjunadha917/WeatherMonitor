@@ -1,35 +1,40 @@
-Weather Monitoring System using OpenWeatherMap API
-Overview
-This project implements a real-time weather monitoring system that fetches weather data from the OpenWeatherMap API. The system continuously retrieves and processes weather conditions for major cities in India. It provides summarized insights using roll-ups and aggregates, while also generating alerts when specific weather thresholds are breached.
-
-Features
-Real-time Weather Data: Fetches weather data every 5 minutes for cities like Delhi, Mumbai, Chennai, Bangalore, Kolkata, and Hyderabad.
-Data Aggregation:
-Daily summary of weather, including:
-Average temperature
-Maximum and minimum temperatures
-Dominant weather condition
-Temperature Conversion: Supports conversion from Kelvin to Celsius.
-Threshold Alerts: Generates alerts if temperature exceeds a defined threshold (35°C by default).
-Configurable API Calls: Users can configure the API call frequency and city list.
-Error Handling: Handles API response errors, including invalid responses and API rate limits.
-Technologies Used
-Programming Language: Java
-
-
-Libraries:
-org.json (for JSON parsing)
-Apache HttpClient (for HTTP requests)
-OpenWeatherMap API: Retrieves weather data
-
-
-Build Tool: Eclipse IDE (Manually managed dependencies via JARs)
-
-
-Project Structure
-bash
-Copy code
-src
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+</head>
+<body>
+<h1>
+    <h1>Weather Monitoring System using OpenWeatherMap API 🌦</h1>
+<p></p>
+    <p><strong>Real-time weather data monitoring for Indian metro cities, featuring temperature conversion, alerts, and summaries.</strong></p>
+<section></section>
+    <section>
+        <h2>📋 Overview</h2>
+        <p>This project implements a real-time weather monitoring system using the OpenWeatherMap API. It fetches weather data for major cities in India every 5 minutes and provides real-time weather insights, daily summaries, and alerts for weather threshold breaches.</p>
+<h2></h2>
+        <h2>✨ Features</h2>
+        <ul>
+            <li><strong>Real-time Weather Data:</strong> Fetches data every 5 minutes for cities like Delhi, Mumbai, Chennai, Bangalore, Kolkata, and Hyderabad.</li>
+            <li><strong>Data Aggregation:</strong> Summarizes daily weather (average, max, min temperatures).</li>
+            <li><strong>Temperature Conversion:</strong> Converts Kelvin to Celsius for easy readability.</li>
+            <li><strong>Threshold Alerts:</strong> Alerts triggered if temperature exceeds 35°C (default).</li>
+            <li><strong>Configurable Settings:</strong> API call frequency and city list are configurable.</li>
+            <li><strong>Error Handling:</strong> Robust handling for API errors and rate limits.</li>
+        </ul>
+<h2></h2>
+        <h2>🛠 Technologies Used</h2>
+        <ul>
+            <li><strong>Programming Language:</strong> Java</li>
+            <li><strong>Libraries:</strong> org.json (for JSON parsing), Apache HttpClient (for HTTP requests)</li>
+            <li><strong>API:</strong> OpenWeatherMap API</li>
+            <li><strong>Build Tool:</strong> Eclipse IDE (with manual JAR dependency management)</li>
+        </ul>
+<h2></h2>
+        <h2>🗂 Project Structure</h2>
+        <pre><code>src
 │
 ├── app
 │   └── WeatherMonitorApp.java        # Main application to start the weather monitoring service
@@ -45,79 +50,59 @@ src
 │
 └── util
     └── HttpUtil.java                 # Utility class for handling HTTP requests
-Installation and Setup
-Prerequisites:
+        </code></pre>
+<h2></h2>
+        <h2>🔧 Installation and Setup</h2>
+<h2></h2>
+        <h3>Prerequisites</h3>
+        <ul>
+            <li>Java Development Kit (JDK) 8 or later.</li>
+            <li>Eclipse IDE (or any preferred IDE).</li>
+            <li>A valid API key from OpenWeatherMap.</li>
+        </ul>
+        <h3>Steps</h3>
+        <ol>
+            <li><strong>Clone the Repository:</strong></li>
+            <pre><code>git clone &lt;repository-url&gt;
+cd &lt;repository-folder&gt;
+            </code></pre>
+            <li><strong>Add Dependencies:</strong> Download <code>org.json</code> JAR file and add it to your project.</li>
+            <li><strong>Configure API Key:</strong> Open <code>config/AppConfig.java</code> and replace <code>your_openweather_api_key</code> with your actual API key.</li>
+            <li><strong>Run the Application:</strong> Open <code>WeatherMonitorApp.java</code> in your IDE and run the program to start monitoring weather updates.</li>
+        </ol>
+        <h2>⚙️ Usage</h2>
+        <ul>
+            <li><strong>Weather Data Fetching:</strong> Fetches data every 5 minutes (configurable in <code>AppConfig.java</code>).</li>
+            <li><strong>Threshold Alerts:</strong> Alerts triggered in the console when temperature exceeds 35°C.</li>
+            <li><strong>Daily Summary:</strong> Logs average, maximum, and minimum temperatures with dominant weather condition.</li>
+        </ul>
+        <h2>🧪 Test Cases</h2>
+        <ul>
+            <li><strong>System Setup:</strong> Verify connection to OpenWeatherMap API with a valid API key.</li>
+            <li><strong>Data Retrieval:</strong> Test API calls and validate correct parsing of weather data.</li>
+            <li><strong>Temperature Conversion:</strong> Test Kelvin to Celsius conversion.</li>
+            <li><strong>Threshold Alerts:</strong> Simulate temperature breaches and check for alerts.</li>
+            <li><strong>Error Handling:</strong> Test invalid API responses and rate limit errors.</li>
+        </ul>
+        <h2>🚨 Error Handling and Troubleshooting</h2>
+        <ul>
+            <li><strong>Invalid API Key:</strong> Ensure the key is correct in <code>AppConfig.java</code>.</li>
+            <li><strong>Malformed JSON Response:</strong> Logs error and skips processing.</li>
+            <li><strong>API Rate Limits:</strong> Add delays between API calls to avoid "too many requests" errors.</li>
+        </ul>
+        <h2>🌟 Future Enhancements</h2>
+        <ul>
+            <li>Add humidity, wind speed, and pressure to summaries.</li>
+            <li>Implement email notifications for temperature breaches.</li>
+            <li>Integrate 5-day weather forecasts.</li>
+            <li>Develop a web-based UI to visualize weather trends and alerts.</li>
+        </ul>
+        <h2>📜 License</h2>
+        <p>This project is licensed under the MIT License. See the <a href="#">LICENSE</a> file for more details.</p>
+    </section>
+    <div class="footer">
+        <p>Weather Monitoring System © 2024</p>
+    </div>
 
-Java Development Kit (JDK) 8 or later.
-Eclipse IDE (or any preferred IDE).
-A valid API key from OpenWeatherMap.
-Clone the Repository:
-
-bash
-Copy code
-git clone <repository-url>
-cd <repository-folder>
-Add Dependencies:
-
-Download the following JAR files:
-org.json JAR
-Add them to your project:
-Eclipse: Right-click on the project -> Build Path -> Add External JARs.
-Configure API Key and Settings:
-
-Open config/AppConfig.java.
-Replace your_openweather_api_key with your actual API key.
-Run the Application:
-
-Open WeatherMonitorApp.java in your IDE.
-Run the program to start monitoring weather updates.
-Usage
-Weather Data Fetching:
-
-The system fetches weather data every 5 minutes (configurable in AppConfig.java).
-For each city, it prints the current temperature, feels-like temperature, and weather conditions.
-Threshold Alerts:
-
-If the temperature exceeds 35°C for any city, the system triggers an alert on the console.
-Daily Summary:
-
-Summarizes daily temperature metrics (average, max, min) and logs the dominant weather condition.
-Test Cases
-System Setup:
-
-Verify the system connects to the OpenWeatherMap API using a valid API key.
-Data Retrieval:
-
-Simulate API calls at different intervals and verify that weather data is correctly retrieved and parsed.
-Temperature Conversion:
-
-Test the conversion from Kelvin to Celsius.
-Threshold Alerts:
-
-Define threshold limits and simulate temperature breaches to trigger alerts.
-Error Handling:
-
-Test with invalid API responses (e.g., rate limit exceeded) and verify that the system handles these cases gracefully.
-Error Handling and Troubleshooting
-Invalid API Key Error:
-
-Make sure the API key is correctly configured in AppConfig.java.
-Empty or Malformed JSON Response:
-
-If the response is invalid, the system logs the error and skips processing for that city.
-API Rate Limits:
-
-Add a delay between API calls if the service returns a "too many requests" error.
-Future Enhancements (Bonus Features)
-Support for Additional Weather Metrics:
-
-Include humidity, wind speed, and pressure in the summary.
-Email Alerts:
-
-Send email notifications when temperature thresholds are breached.
-Weather Forecasts:
-
-Retrieve 5-day forecasts and display summaries based on predicted conditions.
-UI Visualization:
-
-Add a web-based interface to visualize weather trends and alerts.
+</body>
+</html>
